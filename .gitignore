@@ -1,0 +1,11 @@
+*/.DS_Store/
+*/__pycache__/
+.idea/
+.DS_Store
+.coverage
+__pycache__
+.env
+*.jpeg
+*.jpg
+*.db
+.pytest_cache/

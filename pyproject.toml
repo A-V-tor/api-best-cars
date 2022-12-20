@@ -10,6 +10,8 @@ packages = [{include = "api_best_cars"}]
 python = "^3.11"
 flask = "^2.2.2"
 flask-sqlalchemy = "^3.0.2"
+flask-jwt-extended = "^4.4.4"
+flask-apispec = "^0.11.4"
 
 
 [tool.poetry.group.dev.dependencies]

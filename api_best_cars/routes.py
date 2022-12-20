@@ -1,35 +1,28 @@
 from flask import request, jsonify, current_app as app
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from .models import Cars, CombustionEngine, ElectricEngine, db
-
+from .models import Cars, CombustionEngine, ElectricEngine, User, db
+from . import jwt
+from .shcema import CarsSchema
 
 @app.route("/", methods=["GET"])
+#@jwt_required()
 def get_data():
     data = Cars.query.filter_by().all()
-    lst = []
-    for item in data:
-        serializad = {
-            "model": item.model,
-            "year": item.year,
-            "engine": item.engine,
-            "max_speed_lower_limit": item.max_speed_lower_limit,
-            "max_speed_upper_limit": item.max_speed_upper_limit,
-            "released_copies": item.released_copies,
-        }
-        if serializad["engine"] == "combustion":
-            horsepower = item.combustion_engine_type[0].horsepower
-            kW = item.combustion_engine_type[0].kW
-            serializad.update({"horsepower": horsepower, "kW": kW})
-        else:
-            power_reserve = item.eletric_engine_type[0].power_reserve
-            serializad.update({"power_reserve": power_reserve})
-        lst.append(jsonify(serializad))
-    return [i.get_json() for i in lst]
+    schema = CarsSchema(many=True)
+    return jsonify(schema.dump(data))
+
 
 
 @app.route("/", methods=["POST"])
+@jwt_required()
 def send_data():
     data_for_add = request.json
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).first()
+    check = hasattr(user, "admin")
+    if not check:
+        return {"message": "No access"}
     try:
         model = data_for_add["model"]
         year = data_for_add["year"]
@@ -45,7 +38,7 @@ def send_data():
             max_speed_upper_limit=max_speed_upper_limit,
             released_copies=released_copies,
         )
-    except ValueError("Не корректный ввод данных!"):
+    except ValueError("Invalid data entry!"):
         pass
     if engine == "combustion":
         try:
@@ -54,22 +47,31 @@ def send_data():
             data_for_engine = CombustionEngine(
                 horsepower=horsepower, kW=kW, car=data_car
             )
-        except ValueError("Не корректный ввод данных!"):
+            db.session.add(data_car, data_for_engine)
+        except ValueError("Invalid data entry!"):
             pass
-    else:
+    elif engine == "electric":
         try:
             power_reserve = data_for_add.get("power_reserve", None)
             data_for_engine = ElectricEngine(power_reserve=power_reserve, car=data_car)
-        except ValueError("Не корректный ввод данных!"):
+            db.session.add(data_car, data_for_engine)
+        except ValueError("Invalid data entry!"):
             pass
-    db.session.add(data_car, data_for_engine)
+    else:
+        pass
     db.session.commit()
     return data_for_add
 
 
 @app.route("/<model>", methods=["PUT"])
+@jwt_required()
 def make_update(model):
     data_for_update = request.json
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).first()
+    check = hasattr(user, "admin")
+    if not check:
+        return {"message": "No access"}
     item = Cars.query.filter_by(model=model).first()
     if not item:
         return {"message": "No such model"}, 400
@@ -105,15 +107,39 @@ def make_update(model):
                 ],
             }
         return jsonify(serializad)
-    except ValueError("Не корректный ввод данных!"):
+    except ValueError("Invalid data entry!"):
         pass
 
 
 @app.route("/<model>", methods=["DELETE"])
+@jwt_required()
 def data_delete(model):
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).first()
+    check = hasattr(user, "admin")
+    if not check:
+        return {"message": "No access"}
     item = Cars.query.filter_by(model=model).first()
     if not item:
         return {"message": "No such model"}, 400
     db.session.delete(item)
     db.session.commit()
     return {"message": "Entry deleted"}, 200
+
+
+@app.route('/register', methods=['POST'])
+def register():
+    params = request.json
+    user = User(**params)
+    db.session.add(user)
+    db.session.commit()
+    token = user.get_token()
+    return {"access token": token}
+
+
+@app.route('/login', methods=['POST'])
+def login():
+    params = request.json
+    user = User.authenticate(**params)
+    token = user.get_token()
+    return {"access token": token}

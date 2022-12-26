@@ -1,145 +1,151 @@
+import logging
 from flask import request, jsonify, current_app as app
 from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_apispec import use_kwargs, marshal_with
 
-from .models import Cars, CombustionEngine, ElectricEngine, User, db
-from . import jwt
-from .shcema import CarsSchema
+from .models import User, db, Cars
+from . import jwt, docs
+from .shcema import UserSchema, AuthSchema, CarsSchema
+
+
+logging.basicConfig(
+    filename="record.log",
+    level=logging.ERROR,
+    format=f"%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s",
+)
+
 
 @app.route("/", methods=["GET"])
-#@jwt_required()
-def get_data():
-    data = Cars.query.filter_by().all()
-    schema = CarsSchema(many=True)
-    return jsonify(schema.dump(data))
+@jwt_required()
+@marshal_with(CarsSchema(many=True))
+def get_all_data_cars():
+    try:
+        data = Cars.query.filter_by().all()
+        return data
+    except Exception:
+        app.logger.error("request error for page")
+        return jsonify({"message": "error"})
 
+
+@app.route("/<model>", methods=["GET"])
+@jwt_required()
+@marshal_with(CarsSchema)
+def get_data_car(model):
+    try:
+        data = Cars.query.filter_by(model=model).order_by(Cars.data).first()
+        return data
+    except Exception:
+        app.logger.error(f"not found {model}")
+        return jsonify({"message": "error"})
 
 
 @app.route("/", methods=["POST"])
 @jwt_required()
-def send_data():
-    data_for_add = request.json
-    user_id = get_jwt_identity()
-    user = User.query.filter_by(id=user_id).first()
-    check = hasattr(user, "admin")
-    if not check:
-        return {"message": "No access"}
+@use_kwargs(CarsSchema)
+@marshal_with(CarsSchema)
+def send_data(**kwargs):
     try:
-        model = data_for_add["model"]
-        year = data_for_add["year"]
-        engine = data_for_add["engine"]
-        max_speed_lower_limit = data_for_add.get("max_speed_lower_limit", None)
-        max_speed_upper_limit = data_for_add.get("max_speed_upper_limit", None)
-        released_copies = data_for_add.get("released", None)
-        data_car = Cars(
-            model=model,
-            year=year,
-            engine=engine,
-            max_speed_lower_limit=max_speed_lower_limit,
-            max_speed_upper_limit=max_speed_upper_limit,
-            released_copies=released_copies,
-        )
-    except ValueError("Invalid data entry!"):
-        pass
-    if engine == "combustion":
-        try:
-            horsepower = data_for_add.get("horsepower", None)
-            kW = data_for_add.get("kW", None)
-            data_for_engine = CombustionEngine(
-                horsepower=horsepower, kW=kW, car=data_car
-            )
-            db.session.add(data_car, data_for_engine)
-        except ValueError("Invalid data entry!"):
-            pass
-    elif engine == "electric":
-        try:
-            power_reserve = data_for_add.get("power_reserve", None)
-            data_for_engine = ElectricEngine(power_reserve=power_reserve, car=data_car)
-            db.session.add(data_car, data_for_engine)
-        except ValueError("Invalid data entry!"):
-            pass
-    else:
-        pass
-    db.session.commit()
-    return data_for_add
+        data_for_add = request.json
+        user_id = get_jwt_identity()
+        user = User.query.filter_by(id=user_id).first()
+        admin = hasattr(user, "admin")
+        if not admin:
+            return {"message": "No access"}
+        new_car = Cars(**kwargs)
+        db.session.add(new_car)
+        db.session.commit()
+        return new_car
+    except Exception:
+        app.logger.error("request failed")
+        return jsonify({"message": "error"})
 
 
 @app.route("/<model>", methods=["PUT"])
 @jwt_required()
-def make_update(model):
-    data_for_update = request.json
-    user_id = get_jwt_identity()
-    user = User.query.filter_by(id=user_id).first()
-    check = hasattr(user, "admin")
-    if not check:
-        return {"message": "No access"}
-    item = Cars.query.filter_by(model=model).first()
-    if not item:
-        return {"message": "No such model"}, 400
+@use_kwargs(CarsSchema)
+@marshal_with(CarsSchema)
+def make_update(model, **kwargs):
     try:
-        for (
-            key,
-            value,
-        ) in data_for_update.items():
+        user_id = get_jwt_identity()
+        user = User.query.filter_by(id=user_id).first()
+        admin = hasattr(user, "admin")
+        if not admin:
+            return {"message": "No access"}
+        item = Cars.query.filter_by(model=model).first()
+        if not item:
+            return {"message": "No such model"}, 400
+        for key, value in kwargs.items():
             setattr(item, key, value)
         db.session.commit()
-        check = hasattr(item, f"{item.eletric_engine_type}")
-        if check:
-            serializad = {
-                "model": item.model,
-                "year": item.year,
-                "engine": item.engine,
-                "max_speed_lower_limit": item.max_speed_lower_limit,
-                "max_speed_upper_limit": item.max_speed_upper_limit,
-                "released_copies": item.released_copies,
-                "eletric_engine_type": item.eletric_engine_type[0].power_reserve,
-            }
-        else:
-            serializad = {
-                "model": item.model,
-                "year": item.year,
-                "engine": item.engine,
-                "max_speed_lower_limit": item.max_speed_lower_limit,
-                "max_speed_upper_limit": item.max_speed_upper_limit,
-                "released_copies": item.released_copies,
-                "combustion_engine_type": [
-                    item.combustion_engine_type[0].horsepower,
-                    item.combustion_engine_type[0].kW,
-                ],
-            }
-        return jsonify(serializad)
-    except ValueError("Invalid data entry!"):
-        pass
+        return item, 200
+    except Exception:
+        app.logger.error("request failed")
+        return jsonify({"message": "error"})
 
 
 @app.route("/<model>", methods=["DELETE"])
 @jwt_required()
+@marshal_with(CarsSchema)
 def data_delete(model):
-    user_id = get_jwt_identity()
-    user = User.query.filter_by(id=user_id).first()
-    check = hasattr(user, "admin")
-    if not check:
-        return {"message": "No access"}
-    item = Cars.query.filter_by(model=model).first()
-    if not item:
-        return {"message": "No such model"}, 400
-    db.session.delete(item)
-    db.session.commit()
-    return {"message": "Entry deleted"}, 200
+    try:
+        user_id = get_jwt_identity()
+        user = User.query.filter_by(id=user_id).first()
+        admin = hasattr(user, "admin")
+        if not admin:
+            return {"message": "No access"}
+        item = Cars.query.filter_by(model=model).first()
+        if not item:
+            return {"message": "No such model"}, 400
+        db.session.delete(item)
+        db.session.commit()
+        return {"message": "Entry deleted"}, 200
+    except Exception:
+        app.logger.error("request failed")
+        return jsonify({"message": "error"})
 
 
-@app.route('/register', methods=['POST'])
-def register():
-    params = request.json
-    user = User(**params)
-    db.session.add(user)
-    db.session.commit()
-    token = user.get_token()
-    return {"access token": token}
+@app.route("/register", methods=["POST"])
+@use_kwargs(UserSchema)
+@marshal_with(UserSchema)
+def register(**kwargs):
+    try:
+        user = User(**kwargs)
+        db.session.add(user)
+        db.session.commit()
+        token = user.get_token()
+        return {"message": token}, 200
+    except Exception:
+        app.logger.error("request failed")
+        return jsonify({"message": "error"})
 
 
-@app.route('/login', methods=['POST'])
-def login():
-    params = request.json
-    user = User.authenticate(**params)
-    token = user.get_token()
-    return {"access token": token}
+@app.route("/login", methods=["POST"])
+@use_kwargs(UserSchema(only=("email", "psw")))
+@marshal_with(AuthSchema)
+def login(**kwargs):
+    try:
+        user = User.authenticate(**kwargs)
+        token = user.get_token()
+        return {"message": token}, 200
+    except Exception:
+        app.logger.error(f"not found user")
+        return jsonify({"message": "error"})
+
+
+@app.errorhandler(422)
+def error_handler(err):
+    headers = err.data.get("headers", None)
+    messages = err.data.get("messages", ["Invalid request"])
+    if headers:
+        return jsonify({"messages": messages}), headers
+    else:
+        return jsonify(messages)
+
+
+docs.register(get_all_data_cars)
+docs.register(get_data_car)
+docs.register(send_data)
+docs.register(make_update)
+docs.register(data_delete)
+docs.register(register)
+docs.register(login)

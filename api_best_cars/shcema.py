@@ -1,29 +1,27 @@
-from marshmallow import Schema, fields, validate
+from marshmallow import Schema, fields, validate, post_load
 
 
 class CarsSchema(Schema):
     id = fields.Integer(dump_only=True)
-    model = fields.String(required=True, validate=[
-        validate.Length(max=50)
-    ])
+    brend = fields.String(required=True, validate=[validate.Length(max=255)])
+    model = fields.String(validate=[validate.Length(max=255)])
     year = fields.Integer()
-    engine = fields.String(required=True, validate=[
-        validate.Length(max=50)
-    ])
-    max_speed_lower_limit = fields.Integer()
-    max_speed_upper_limit = fields.Integer()
-    eletric_engine_type = fields.Nested('ElectricEngineSchema', many=True)
-    combustion_engine_type = fields.Nested('CombustionEngine', many=True)
+    engine = fields.String(validate=[validate.Length(max=255)])
+    max_speed = fields.Integer()
+    released_copies = fields.String(validate=[validate.Length(max=255)])
+    description = fields.String(validate=[validate.Length(max=255)])
+    message = fields.String(dump_only=True)
 
 
-class ElectricEngineSchema(Schema):
-    id = fields.Integer(dump_only=True)
-    power_reserve = fields.String(required=True, validate=[
-        validate.Length(max=50)
-    ])
+class UserSchema(Schema):
+    name = fields.String(required=True, validate=[validate.Length(max=255)])
+    email = fields.String(required=True, validate=[validate.Length(max=50)])
+    psw = fields.String(required=True, validate=[validate.Length(max=255)])
+    admin = fields.Boolean()
+    owner = fields.Boolean()
+    message = fields.String(dump_only=True)
 
 
-class CombustionEngine(Schema):
-    id = fields.Integer(dump_only=True)
-    horsepower = fields.Integer()
-    kW = fields.Integer()
+class AuthSchema(Schema):
+    access_token = fields.String(dump_only=True)
+    message = fields.String(dump_only=True)

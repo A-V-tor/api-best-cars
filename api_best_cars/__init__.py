@@ -19,7 +19,6 @@ def create_app():
 
     db.init_app(app)
     jwt.init_app(app)
-    docs.init_app(app)
 
     app.config.update(
         {
@@ -33,9 +32,11 @@ def create_app():
     )
 
     with app.app_context():
-        from . import routes
+        from . import routes, authentic
 
         # db.drop_all()
         db.create_all()
+        app.register_blueprint(authentic.user)
+        docs.init_app(app)
 
         return app

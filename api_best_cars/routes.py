@@ -5,7 +5,7 @@ from flask_apispec import use_kwargs, marshal_with
 
 from .models import User, db, Cars
 from . import jwt, docs
-from .shcema import UserSchema, AuthSchema, CarsSchema
+from .shcema import CarsSchema
 
 
 logging.basicConfig(
@@ -45,7 +45,6 @@ def get_data_car(model):
 @marshal_with(CarsSchema)
 def send_data(**kwargs):
     try:
-        data_for_add = request.json
         user_id = get_jwt_identity()
         user = User.query.filter_by(id=user_id).first()
         admin = hasattr(user, "admin")
@@ -104,48 +103,8 @@ def data_delete(model):
         return jsonify({"message": "error"})
 
 
-@app.route("/register", methods=["POST"])
-@use_kwargs(UserSchema)
-@marshal_with(UserSchema)
-def register(**kwargs):
-    try:
-        user = User(**kwargs)
-        db.session.add(user)
-        db.session.commit()
-        token = user.get_token()
-        return {"message": token}, 200
-    except Exception:
-        app.logger.error("request failed")
-        return jsonify({"message": "error"})
-
-
-@app.route("/login", methods=["POST"])
-@use_kwargs(UserSchema(only=("email", "psw")))
-@marshal_with(AuthSchema)
-def login(**kwargs):
-    try:
-        user = User.authenticate(**kwargs)
-        token = user.get_token()
-        return {"message": token}, 200
-    except Exception:
-        app.logger.error(f"not found user")
-        return jsonify({"message": "error"})
-
-
-@app.errorhandler(422)
-def error_handler(err):
-    headers = err.data.get("headers", None)
-    messages = err.data.get("messages", ["Invalid request"])
-    if headers:
-        return jsonify({"messages": messages}), headers
-    else:
-        return jsonify(messages)
-
-
 docs.register(get_all_data_cars)
 docs.register(get_data_car)
 docs.register(send_data)
 docs.register(make_update)
 docs.register(data_delete)
-docs.register(register)
-docs.register(login)

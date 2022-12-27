@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify
 from flask_apispec import use_kwargs, marshal_with
-from .models import User, db
+from api_best_cars.models import User, db
 from .shcema import UserSchema, AuthSchema
-from . import docs
+from api_best_cars import docs
 
 
 user = Blueprint(

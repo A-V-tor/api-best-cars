@@ -32,10 +32,12 @@ def create_app():
     )
 
     with app.app_context():
-        from . import routes, authentic
+        from . import routes#, authentic
+        from authentic import authentic
 
         # db.drop_all()
         db.create_all()
+        # app.register_blueprint(authentic.user)
         app.register_blueprint(authentic.user)
         docs.init_app(app)
 

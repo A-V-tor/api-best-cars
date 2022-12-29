@@ -1,0 +1,219 @@
+2022-12-28 11:43:48,330 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-28 11:43:48,330 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-28 11:43:48,333 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-28 11:43:48,974 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-28 11:43:48,999 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-28 11:43:52,465 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 11:43:52] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2022-12-28 11:43:58,427 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 11:43:58] "GET /swagger-ui/ HTTP/1.1" 200 -
+2022-12-28 11:43:58,473 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 11:43:58] "GET /flask-apispec/static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2022-12-28 11:43:58,474 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 11:43:58] "GET /flask-apispec/static/swagger-ui.css HTTP/1.1" 200 -
+2022-12-28 11:43:58,474 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 11:43:58] "GET /flask-apispec/static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2022-12-28 11:43:58,736 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 11:43:58] "GET /swagger/ HTTP/1.1" 200 -
+2022-12-28 17:38:03,903 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-28 17:38:03,905 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-28 17:38:03,906 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-28 17:38:04,781 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-28 17:38:04,799 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-28 20:10:42,758 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-28 20:10:42,759 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-28 20:10:42,762 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-28 20:10:43,639 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-28 20:10:43,657 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-28 20:10:48,285 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 20:10:48] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2022-12-28 20:15:05,710 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-28 20:15:05,711 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-28 20:15:05,715 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-28 20:15:07,369 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-28 20:15:07,383 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-28 20:15:09,192 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 20:15:09] "GET / HTTP/1.1" 200 -
+2022-12-28 20:15:17,596 ERROR api_best_cars Thread-3 (process_request_thread) : request error for page
+2022-12-28 20:15:17,597 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 20:15:17] "GET / HTTP/1.1" 200 -
+2022-12-28 20:15:45,212 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-28 20:15:45,212 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-28 20:15:45,213 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-28 20:15:46,354 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-28 20:15:46,391 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-28 20:15:46,688 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 20:15:46] "GET / HTTP/1.1" 200 -
+2022-12-28 20:16:27,501 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-28 20:16:27,501 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-28 20:16:27,503 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-28 20:16:28,302 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-28 20:16:28,315 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-28 20:16:31,182 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [28/Dec/2022 20:16:31] "GET / HTTP/1.1" 200 -
+2022-12-29 19:15:18,325 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 19:15:18,326 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 19:15:18,329 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 19:15:19,082 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 19:15:19,102 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 19:19:06,831 ERROR api_best_cars MainThread : request failed
+2022-12-29 19:46:38,534 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 19:46:38,536 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 19:46:38,539 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 19:46:39,417 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 19:46:39,429 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 19:46:46,346 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:46:46] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2022-12-29 19:46:49,855 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:46:49] "[31m[1mGET /Model%20T HTTP/1.1[0m" 401 -
+2022-12-29 19:46:58,291 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:46:58] "[31m[1mGET /Model%20T HTTP/1.1[0m" 401 -
+2022-12-29 19:47:02,928 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:47:02] "[31m[1mGET /ModelT HTTP/1.1[0m" 401 -
+2022-12-29 19:47:27,442 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 19:47:27,442 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 19:47:27,444 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 19:47:28,062 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 19:47:28,074 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 19:47:31,193 ERROR api_best_cars Thread-2 (process_request_thread) : not found ModelT
+2022-12-29 19:47:31,194 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:47:31] "GET /ModelT HTTP/1.1" 200 -
+2022-12-29 19:47:36,277 ERROR api_best_cars Thread-3 (process_request_thread) : not found Model T
+2022-12-29 19:47:36,278 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:47:36] "GET /Model%20T HTTP/1.1" 200 -
+2022-12-29 19:47:42,746 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:47:42] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2022-12-29 19:47:46,127 ERROR api_best_cars Thread-5 (process_request_thread) : not found Model T
+2022-12-29 19:47:46,127 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:47:46] "GET /Model%20T HTTP/1.1" 200 -
+2022-12-29 19:49:48,093 INFO werkzeug MainThread :  * Detected change in '/Users/a-v-tor/Documents/api-best-cars/api_best_cars/routes.py', reloading
+2022-12-29 19:49:48,380 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 19:49:50,458 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 19:49:50,470 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 19:49:50,502 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:49:50] "GET / HTTP/1.1" 200 -
+2022-12-29 19:50:51,403 INFO werkzeug MainThread :  * Detected change in '/Users/a-v-tor/Documents/api-best-cars/api_best_cars/routes.py', reloading
+2022-12-29 19:50:51,650 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 19:50:52,408 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 19:50:52,419 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 19:50:56,561 ERROR api_best_cars Thread-2 (process_request_thread) : not found Model T
+2022-12-29 19:50:56,563 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 19:50:56] "GET /Model%20T HTTP/1.1" 200 -
+2022-12-29 19:51:11,729 INFO werkzeug MainThread :  * Detected change in '/Users/a-v-tor/Documents/api-best-cars/api_best_cars/routes.py', reloading
+2022-12-29 19:51:11,867 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 19:51:12,489 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 19:51:12,500 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:17:04,222 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:17:04,223 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:17:04,224 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:17:04,927 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:17:04,941 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:18:11,923 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:18:11,923 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:18:11,924 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:18:12,554 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:18:12,562 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:18:14,170 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:18:14] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2022-12-29 20:18:17,710 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:18:17] "[31m[1mGET /dsq HTTP/1.1[0m" 401 -
+2022-12-29 20:18:45,489 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:18:45,489 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:18:45,491 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:18:46,367 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:18:46,377 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:18:47,290 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:18:47] "[31m[1mGET /dsq HTTP/1.1[0m" 401 -
+2022-12-29 20:18:51,950 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:18:51] "[32mGET /a/sda HTTP/1.1[0m" 308 -
+2022-12-29 20:18:51,955 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:18:51] "GET /a/sda/ HTTP/1.1" 200 -
+2022-12-29 20:20:58,756 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:20:58,756 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:20:58,758 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:20:59,622 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:20:59,632 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:21:05,069 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:21:05] "[32mGET /dsq HTTP/1.1[0m" 308 -
+2022-12-29 20:21:05,078 ERROR api_best_cars Thread-3 (process_request_thread) : not found dsq
+2022-12-29 20:21:05,078 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:21:05] "GET /dsq/ HTTP/1.1" 200 -
+2022-12-29 20:21:08,418 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:21:08] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2022-12-29 20:21:12,065 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:21:12] "[32mGET /Model%20T HTTP/1.1[0m" 308 -
+2022-12-29 20:21:12,072 ERROR api_best_cars Thread-6 (process_request_thread) : not found Model T
+2022-12-29 20:21:12,073 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:21:12] "GET /Model%20T/ HTTP/1.1" 200 -
+2022-12-29 20:21:51,765 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:21:51,765 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:21:51,766 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:21:52,382 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:21:52,390 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:21:58,557 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:21:58] "[32mGET /m/Model%20T HTTP/1.1[0m" 308 -
+2022-12-29 20:21:58,566 ERROR api_best_cars Thread-3 (process_request_thread) : not found Model T
+2022-12-29 20:21:58,567 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:21:58] "GET /m/Model%20T/ HTTP/1.1" 200 -
+2022-12-29 20:22:05,441 ERROR api_best_cars Thread-4 (process_request_thread) : not found Model T
+2022-12-29 20:22:05,442 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:22:05] "GET /m/Model%20T/ HTTP/1.1" 200 -
+2022-12-29 20:22:45,970 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:22:45,970 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:22:45,971 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:22:46,647 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:22:46,659 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:22:48,111 ERROR api_best_cars Thread-2 (process_request_thread) : not found Model T
+2022-12-29 20:22:48,112 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:22:48] "GET /m/Model%20T/ HTTP/1.1" 200 -
+2022-12-29 20:22:48,854 ERROR api_best_cars Thread-3 (process_request_thread) : not found Model T
+2022-12-29 20:22:48,854 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:22:48] "GET /m/Model%20T/ HTTP/1.1" 200 -
+2022-12-29 20:24:07,549 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:24:07,551 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:24:07,552 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:24:08,265 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:24:08,280 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:24:19,245 ERROR api_best_cars Thread-2 (process_request_thread) : not found T
+2022-12-29 20:24:19,246 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:24:19] "GET /T/ HTTP/1.1" 200 -
+2022-12-29 20:24:59,121 INFO werkzeug MainThread :  * Detected change in '/Users/a-v-tor/Documents/api-best-cars/tests/test_api_best_cars.py', reloading
+2022-12-29 20:24:59,430 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:25:00,849 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:25:00,860 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:25:08,981 INFO werkzeug MainThread :  * Detected change in '/Users/a-v-tor/Documents/api-best-cars/tests/conftest.py', reloading
+2022-12-29 20:25:09,190 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:25:09,972 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:25:09,983 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:40:18,787 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:40:18,789 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:40:18,792 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:40:19,623 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:40:19,636 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:40:24,322 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:40:24] "GET /T/ HTTP/1.1" 200 -
+2022-12-29 20:40:29,135 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:40:29] "[32mGET /T HTTP/1.1[0m" 308 -
+2022-12-29 20:40:29,146 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:40:29] "GET /T/ HTTP/1.1" 200 -
+2022-12-29 20:40:37,192 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:40:37] "GET /Model%20T/ HTTP/1.1" 200 -
+2022-12-29 20:45:41,387 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:45:41,390 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:45:41,393 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:45:42,225 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:45:42,238 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:45:57,227 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:45:57] "GET /Model%20T/ HTTP/1.1" 200 -
+2022-12-29 20:59:13,502 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 20:59:13,508 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 20:59:13,511 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 20:59:14,334 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 20:59:14,352 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 20:59:18,503 ERROR api_best_cars Thread-2 (process_request_thread) : request error for page
+2022-12-29 20:59:18,508 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 20:59:18] "GET / HTTP/1.1" 200 -
+2022-12-29 21:00:21,256 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 21:00:21,256 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 21:00:21,257 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 21:00:21,961 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 21:00:21,971 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 21:00:23,467 ERROR api_best_cars Thread-2 (process_request_thread) : request error for page
+2022-12-29 21:00:23,469 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:00:23] "GET / HTTP/1.1" 200 -
+2022-12-29 21:00:24,125 ERROR api_best_cars Thread-3 (process_request_thread) : request error for page
+2022-12-29 21:00:24,126 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:00:24] "GET / HTTP/1.1" 200 -
+2022-12-29 21:01:00,453 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 21:01:00,453 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 21:01:00,455 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 21:01:01,113 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 21:01:01,123 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 21:01:02,397 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:01:02] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2022-12-29 21:01:02,449 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:01:02] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-12-29 21:01:02,451 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:01:02] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-12-29 21:01:02,475 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:01:02] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-12-29 21:01:02,526 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:01:02] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-12-29 21:29:04,591 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-12-29 21:29:04,593 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2022-12-29 21:29:04,595 INFO werkzeug MainThread :  * Restarting with stat
+2022-12-29 21:29:05,590 WARNING werkzeug MainThread :  * Debugger is active!
+2022-12-29 21:29:05,617 INFO werkzeug MainThread :  * Debugger PIN: 124-050-078
+2022-12-29 21:29:11,587 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [29/Dec/2022 21:29:11] "GET / HTTP/1.1" 200 -

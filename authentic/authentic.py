@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, current_app as app
 from flask_apispec import use_kwargs, marshal_with
 from api_best_cars.models import User, db
 from .shcema import UserSchema, AuthSchema
@@ -21,7 +21,7 @@ def register(**kwargs):
         token = user.get_token()
         return {"message": token}, 200
     except Exception:
-        user.logger.error("request failed")
+        app.logger.error("request failed")
         return jsonify({"message": "error"})
 
 
@@ -34,7 +34,7 @@ def login(**kwargs):
         token = user.get_token()
         return {"message": token}, 200
     except Exception:
-        user.logger.error(f"not found user")
+        app.logger.error(f"not found user")
         return jsonify({"message": "error"})
 
 

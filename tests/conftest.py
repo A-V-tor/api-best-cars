@@ -12,7 +12,7 @@ def app():
         }
     )
     with app.app_context():
-        # db.create_all()
+        #db.create_all()
         db.metadata.create_all(bind=db.engine)
 
         yield app

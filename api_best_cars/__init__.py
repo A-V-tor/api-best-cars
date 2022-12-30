@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_apispec.extension import FlaskApiSpec
 from apispec.ext.marshmallow import MarshmallowPlugin
@@ -10,6 +11,9 @@ from apispec import APISpec
 db = SQLAlchemy()
 jwt = JWTManager()
 docs = FlaskApiSpec()
+cors = CORS(resources={
+    r"/*":{"origins": '*'}
+})
 
 
 def create_app():
@@ -40,5 +44,6 @@ def create_app():
 
         app.register_blueprint(authentic.user)
         docs.init_app(app)
+        cors.init_app(app)
 
         return app

@@ -8,3 +8,6 @@
 </br>
 <h3>Страница документации</h3>
 <code>http://127.0.0.1:5000/swagger-ui</code>
+</br>
+<h4>Сайт с данными</h4>
+<code>https://www.mentoday.ru/technics/garage/ot-model-t-do-model-3-100-samyh-vazhnyh-avtomobiley-v-istorii-chelovechestva/</code>

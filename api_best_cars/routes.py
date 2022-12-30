@@ -55,7 +55,7 @@ def send_data(**kwargs):
         return new_car
     except Exception:
         app.logger.error("request failed")
-        return jsonify({"message": "error"})  # , 422
+        return jsonify({"message": "error"})
 
 
 @app.route("/<model>/", methods=["PUT"])

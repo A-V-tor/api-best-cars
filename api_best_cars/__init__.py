@@ -19,7 +19,7 @@ cors = CORS(resources={
 def create_app():
     """Создание основного приложения."""
     app = Flask(__name__, instance_relative_config=False)
-    app.config.from_object("config")
+    app.config.from_object("config.Config")
 
     db.init_app(app)
     jwt.init_app(app)

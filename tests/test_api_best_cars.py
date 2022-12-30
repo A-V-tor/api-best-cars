@@ -79,6 +79,54 @@ def test_send_data_admin(client, admin_token):
 
     assert res.status_code == 200
 
+    res = client.post(
+        "/",
+        json={
+            "brend": "Lancia",
+            "model": "Lambda",
+            "year": 1923,
+            "engine": "combustion",
+            "max_speed": 114,
+            "released_copies": "11 200 copies",
+            "description": "Подлинный технический шедевр: впервые в мире машина получила легкий несущий кузов вместо тяжелой конструкции кузова на раме.У Lambda была независимая передняя подвеска и двигатель V4.",
+        },
+        headers=admin_token,
+    )
+
+    assert res.status_code == 200
+
+    res = client.post(
+        "/",
+        json={
+            "brend": "Oakland",
+            "model": "6-54",
+            "year": 1924,
+            "engine": "combustion",
+            "max_speed": 93,
+            "released_copies": "No data",
+            "description": "Автомобиль мог похвастаться техническими новшествами: например, его кузов покрывался быстросохнущей краской Dupont. Тормозные механизмы устанавливались на всех четырех колесах, чего у других машин в этом классе не было.",
+        },
+        headers=admin_token,
+    )
+
+    assert res.status_code == 200
+
+    res = client.post(
+        "/",
+        json={
+            "brend": "Rolls-Royce",
+            "model": "Phantom I",
+            "year": 1925,
+            "engine": "combustion",
+            "max_speed": 145,
+            "released_copies": "3512 copies",
+            "description": "Модель Phantom пришла на смену легендарной Rolls-Royce Silver Ghost (40/50), которая выпускалась почти 20 лет. Phantom выглядел элегантнее, современнее и оснащался 6-ти цилиндровым двигателем объемом 7,7 литра и гидравлическими дисковыми тормозами.",
+        },
+        headers=admin_token,
+    )
+
+    assert res.status_code == 200
+
 
 def test_get_all_data_cars(client, user_token):
     res = client.get("/", headers=user_token)
